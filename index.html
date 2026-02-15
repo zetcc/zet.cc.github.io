@@ -463,77 +463,84 @@
             margin: 20px 0;
         }
 
-        /* === PROJECTS === */
-        .empty-state {
-            text-align: center;
-            padding: 60px 20px;
+        /* === PROJECT CARD === */
+        .project-card {
+            background: linear-gradient(135deg, #141938 0%, #1a2045 100%);
+            border: 1px solid #2a3a6a;
+            padding: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 20px;
         }
 
-        .empty-icon {
-            font-size: 64px;
-            margin-bottom: 25px;
-            animation: float 3s ease-in-out infinite;
-            display: inline-block;
+        .project-card:hover {
+            border-color: #4a7ab5;
+            background: rgba(42, 58, 106, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(74, 122, 181, 0.3);
         }
 
-        .empty-title {
-            font-family: 'Press Start 2P', cursive;
-            font-size: 16px;
-            color: #4a7ab5;
+        .project-card-top {
+            display: flex;
+            align-items: center;
+            gap: 15px;
             margin-bottom: 15px;
         }
 
-        .empty-text {
-            font-size: 22px;
-            color: #4a5a8a;
-            max-width: 400px;
-            margin: 0 auto;
-            line-height: 1.6;
+        .project-icon {
+            font-size: 40px;
+            animation: float 3s ease-in-out infinite;
         }
 
-        .empty-loader {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 8px;
+        .project-info {
+            flex: 1;
         }
 
-        .loader-dot {
-            width: 10px;
-            height: 10px;
-            background: #2a3a6a;
-            border-radius: 50%;
-            animation: loaderBounce 1.4s infinite ease-in-out both;
-        }
-
-        .loader-dot:nth-child(1) { animation-delay: -0.32s; }
-        .loader-dot:nth-child(2) { animation-delay: -0.16s; }
-        .loader-dot:nth-child(3) { animation-delay: 0s; }
-
-        @keyframes loaderBounce {
-            0%, 80%, 100% {
-                transform: scale(0.6);
-                background: #2a3a6a;
-            }
-            40% {
-                transform: scale(1);
-                background: #4a7ab5;
-            }
-        }
-
-        .coming-soon-border {
-            margin-top: 30px;
-            padding: 15px;
-            border: 1px dashed #2a3a6a;
-            display: inline-block;
-        }
-
-        .coming-soon-text {
+        .project-name {
             font-family: 'Press Start 2P', cursive;
-            font-size: 10px;
-            color: #3a4a6a;
-            letter-spacing: 3px;
-            animation: blink 2s infinite;
+            font-size: 14px;
+            color: #8ab4f0;
+            margin-bottom: 6px;
+        }
+
+        .project-tag {
+            display: inline-block;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 7px;
+            color: #4a7ab5;
+            border: 1px solid #2a3a6a;
+            padding: 4px 8px;
+            letter-spacing: 1px;
+        }
+
+        .project-desc {
+            font-size: 20px;
+            color: #6a7a9a;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .project-download {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 9px;
+            color: #4a8a5a;
+            letter-spacing: 1px;
+        }
+
+        .project-download::before {
+            content: '⬇';
+            font-size: 14px;
+        }
+
+        .project-divider {
+            height: 1px;
+            background: #2a3a6a;
+            margin: 12px 0 15px 0;
         }
 
         /* === FOOTER === */
@@ -563,6 +570,7 @@
             .nav-tab { padding: 12px 14px; font-size: 9px; }
             .info-grid { grid-template-columns: 1fr; }
             .zet-title { font-size: 24px; }
+            .project-name { font-size: 11px; }
         }
     </style>
 </head>
@@ -716,21 +724,25 @@
                     <span class="window-title">projects.dll</span>
                 </div>
                 <div class="window-body">
-                    <div class="empty-state">
-                        <div class="empty-icon">📂</div>
-                        <div class="empty-title">ПРОЕКТОВ ПОКА НЕТ</div>
-                        <div class="empty-text">
-                            Тут скоро появятся мои проекты на Python и C#. Следи за обновлениями!
+
+                    <!-- PROJECT: MyUnlocker -->
+                    <a class="project-card" href="https://workupload.com/file/kHQEmaR65g4" target="_blank" rel="noopener noreferrer">
+                        <div class="project-card-top">
+                            <div class="project-icon">🔓</div>
+                            <div class="project-info">
+                                <div class="project-name">MyUnlocker</div>
+                                <span class="project-tag">TOOL</span>
+                            </div>
                         </div>
-                        <div class="empty-loader">
-                            <div class="loader-dot"></div>
-                            <div class="loader-dot"></div>
-                            <div class="loader-dot"></div>
+                        <div class="project-divider"></div>
+                        <div class="project-desc">
+                            Утилита для разблокировки. Нажми чтобы скачать.
                         </div>
-                        <div class="coming-soon-border">
-                            <div class="coming-soon-text">COMING SOON . . .</div>
+                        <div class="project-download">
+                            DOWNLOAD
                         </div>
-                    </div>
+                    </a>
+
                 </div>
             </div>
         </div>
